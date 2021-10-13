@@ -9,6 +9,7 @@ biggest population, 10 countries with largest area and ten countries with the bi
 How to run project:    
 1. Save files
 2. In Command line (in projec directory) write: ./mvnw spring-boot:run   
+      (jdk-17 must be installed, and JAVA_HOME variable set)   
 -------
 This is my first java project.   
 There was quite a bit of time to complete the task.   
