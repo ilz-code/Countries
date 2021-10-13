@@ -13,7 +13,7 @@ How to run project:
 This is my first java project.   
 There was quite a bit of time to complete the task.   
 I will continue to supplement it:   
-1. Improve results output;  
+1. Improve results output, using REST API;     
 2. Add .jar file; 
 3. Add some more tests  
 
