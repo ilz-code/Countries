@@ -1,8 +1,8 @@
-package stone.tenbig.services;
+package stone.countries.services;
 
 import java.util.ArrayList;
 
-import stone.tenbig.models.Country;
+import stone.countries.models.Country;
 
 public class PrintResults {
     public static void printCountries(ArrayList<Country> countries){
@@ -18,8 +18,7 @@ public class PrintResults {
 				  countries.get(i).capital + "  " +
 				  currency + "  " +
 				  countries.get(i).population + "  " +
-				  countries.get(i).area + "  " +
-				  countries.get(i).density);            
+				  countries.get(i).area);            
 		}
     }
 }

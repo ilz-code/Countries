@@ -1,8 +1,11 @@
-package stone.tenbig.services;
+package stone.countries.services;
 
-import stone.tenbig.models.*;
+import stone.countries.models.*;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 
 public class GetResults {
     
@@ -14,14 +17,16 @@ public class GetResults {
               });
     }
 
-    public static ArrayList<Country> GetCountriesWithBiggestPopulation(ArrayList<Country> countries){
+    public static ArrayList<Country> GetCountriesWithBiggestPopulation() throws JsonMappingException, JsonProcessingException{
+      ArrayList<Country> countries = GetContent.getUrlContents();
         Collections.sort(countries, (c1, c2) -> {
             return c2.getPopulation().compareTo(c1.getPopulation());			
         });	
         return countries;
     }
 
-    public static ArrayList<Country> GetCountriesWithLargestArea(ArrayList<Country> countries){
+    public static ArrayList<Country> GetCountriesWithLargestArea() throws JsonMappingException, JsonProcessingException{
+      ArrayList<Country> countries = GetContent.getUrlContents();
         Collections.sort(countries, (c1, c2) -> {
             if (c1.getArea() == null ){
                 c1.area = 0.0;
@@ -34,7 +39,9 @@ public class GetResults {
           return countries;	 
     }
 
-    public static ArrayList<Country> GetCountriesWithBiggestDensity(ArrayList<Country> countries){
+    public static ArrayList<Country> GetCountriesWithBiggestDensity() throws JsonMappingException, JsonProcessingException{
+      ArrayList<Country> countries = GetContent.getUrlContents();
+      CalculateDensity(countries);
         Collections.sort(countries, (c1, c2) -> {
             if (c1.density == null){
               c1.density = 0.0;

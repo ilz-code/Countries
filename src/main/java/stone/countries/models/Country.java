@@ -1,4 +1,4 @@
-package stone.tenbig.models;
+package stone.countries.models;
 
 public class Country {
     

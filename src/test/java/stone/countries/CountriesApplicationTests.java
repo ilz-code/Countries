@@ -1,8 +1,8 @@
-package stone.tenbig;
+package stone.countries;
 
-import stone.tenbig.models.Country;
-import stone.tenbig.services.GetContent;
-import stone.tenbig.services.GetResults;
+import stone.countries.models.Country;
+import stone.countries.services.GetContent;
+import stone.countries.services.GetResults;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TenbigApplicationTests {
+class CountriesApplicationTests {
 	
 		ArrayList<Country> countries;
 
@@ -32,25 +32,21 @@ class TenbigApplicationTests {
 	
 	@Test
 	void getBiggestPopulation() throws JsonMappingException, JsonProcessingException{
-		countries = GetContent.getUrlContents();
-		GetResults.GetCountriesWithBiggestPopulation(countries);
+		countries = GetResults.GetCountriesWithBiggestPopulation();
 		Integer actual = countries.get(0).population;
 		assertEquals(83240525, actual);
 	}
 
 	@Test
 	void getLargestArea() throws JsonMappingException, JsonProcessingException{
-		countries = GetContent.getUrlContents();
-		GetResults.GetCountriesWithLargestArea(countries);
+		countries = GetResults.GetCountriesWithLargestArea();
 		Double actual = countries.get(0).area;
 		assertEquals(640679.0, actual);
 	}
 	
 	@Test
 	void getCountryWithBiggestDensity() throws JsonMappingException, JsonProcessingException{
-		countries = GetContent.getUrlContents();
-		GetResults.CalculateDensity(countries);
-		GetResults.GetCountriesWithBiggestDensity(countries);
+		countries = GetResults.GetCountriesWithBiggestDensity();
 		String actual = countries.get(0).name;
 		assertEquals("Gibraltar", actual);
 	}

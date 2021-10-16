@@ -1,4 +1,4 @@
-package stone.tenbig.services;
+package stone.countries.services;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,8 +7,8 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import stone.tenbig.models.Country;
-import stone.tenbig.services.GetContent;
+import stone.countries.models.Country;
+import stone.countries.services.GetContent;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 
