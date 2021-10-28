@@ -1,5 +1,4 @@
 # Countries
-28Stone home-work
    
 ------  
 This project gets data about EU countries    
